@@ -15,6 +15,8 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Redirect exact path="/" to="/layout" />
+        <Redirect exact path="/react-test" to="/layout" />
+
         <Route exact path="/layout" component={() => <Layout />} />
         <Route exact path="/scrollEvent" component={() => <ScrollEvent />} />
 
