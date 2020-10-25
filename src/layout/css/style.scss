@@ -1,0 +1,111 @@
+/**20201024 참고: https://www.daleseo.com/css-responsive-layouts/*/
+
+$layout-top: 33px;
+$layout-ber-width: 150px;
+
+.left {
+  text-align: left !important;
+}
+.center {
+  text-align: center !important;
+}
+.right {
+  text-align: right !important;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+body {
+  transition: all .1s linear;
+  padding-top: #{$layout-top + 2px};
+  padding-left: #{$layout-ber-width + 2px};
+}
+
+.layout-ber {
+  position: fixed;
+  float: left;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+  width: #{$layout-ber-width};
+  // padding: 5px 3px;
+  background: teal;
+  div{
+    padding: 5px 3px;
+  }
+}
+
+header {
+  position: fixed;
+  display: flex;
+  height: #{$layout-top};
+  top: 0;
+  left: #{$layout-ber-width};
+  right: 0;
+  color: white;
+  background: cadetblue;
+
+  div {
+    margin: 5px 5px;
+    float: left;
+  }
+
+  .header-layout {
+    // max-width: 1024px;
+    width: 100%;
+  }
+}
+
+
+
+article {
+  padding-bottom: 10px;
+  // background: teal;
+  float: left;
+  width: 100%;
+}
+
+.sidebar {
+
+  position: fixed;
+  right: 1%;
+  margin-top: 10px;
+  min-width: 100px;
+  max-width: 150px;
+  color: white;
+  background: cadetblue;
+
+  &-h{
+    background: rgb(144, 209, 211);
+
+  }
+
+}
+
+.side{
+  position: fixed;
+  top: 92%;
+
+  right: 3%;
+  color: white;
+}
+
+/* Footer */
+footer {
+  color: white;
+  // background: teal;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
