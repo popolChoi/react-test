@@ -12,7 +12,7 @@ import "./layout/css/style.scss";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Redirect exact path="/" to="/layout" />
         <Redirect exact path="/react-test" to="/layout" />
