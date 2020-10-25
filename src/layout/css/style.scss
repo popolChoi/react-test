@@ -18,7 +18,7 @@ $layout-ber-width: 150px;
 }
 
 body {
-  transition: all .1s linear;
+  transition: all .1s linear !important;
   padding-top: #{$layout-top + 2px};
   padding-left: #{$layout-ber-width + 2px};
 }
