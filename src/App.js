@@ -5,8 +5,12 @@ import Tset from "./test";
 import { Route as Layout } from "./layout";
 import { Route as ScrollEvent } from "./scrollEvent";
 
+import "ag-grid-community/dist/styles/ag-grid.css";
+import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+import "semantic-ui-css/semantic.min.css";
+import "./layout/css/style.scss";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -18,6 +22,6 @@ function App() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
