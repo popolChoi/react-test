@@ -9,7 +9,7 @@ https://www.hohyeonmoon.com/blog/react-js-github-pages-deploy/
 npm run deploy
 git add .
 git status
-git commit -m "Mobx , babel 적용 "
+git commit -m "commit"
 git push -u origin master
 
 git pull origin master
