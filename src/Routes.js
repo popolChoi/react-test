@@ -4,6 +4,7 @@ import Tset from "./test";
 
 import { Route as Layout } from "./layout";
 import { Route as ScrollEvent } from "./scrollEvent";
+import { Route as DataGrid } from "./dataGrid";
 
 
 const component_list = [
@@ -18,6 +19,12 @@ const component_list = [
     name: 'scrollEvent',
     path: "/scrollEvent",
     component : () => <div><ScrollEvent /></div>,
+  },
+   {
+    // link: <Link to="/scrollEvent" style={{ color: 'inherit', textDecoration: 'inherit'}}>scrollEvent</Link>,
+    name: 'dataGrid',
+    path: "/dataGrid",
+    component : () => <div><DataGrid /></div>,
   },
   {
     name: 'router1',
