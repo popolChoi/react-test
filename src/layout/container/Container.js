@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { inject, observer } from 'mobx-react';
 
 import { Icon } from "semantic-ui-react";
 
+
+@inject("layoutStore")
+@observer
 class Container extends Component {
   render() {
     const { children, component_list = [] } = this.props;
-    console.log(component_list);
+    console.log( this.props.layoutStore);
+
     return (
       <React.Fragment>
         <div

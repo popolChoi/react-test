@@ -1,5 +1,7 @@
 import Route from './Route';
+import stores from './stores';
 
 export {
-    Route
+    Route,
+    stores,
 }
