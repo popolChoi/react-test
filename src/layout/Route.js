@@ -2,10 +2,11 @@ import React from "react";
 import Container from "./container/Container";
 
 
-function Route(props = {}) {
+function Route(props = []) {
+  console.log(props);
   return (
     <React.Fragment>
-      <Container component={props.component}/>
+      <Container {...props}/>
     </React.Fragment>
   );
 }

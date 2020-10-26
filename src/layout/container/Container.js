@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import { Icon } from "semantic-ui-react";
 
 class Container extends Component {
   render() {
-    const { component } = this.props;
+    const { children, component_list = [] } = this.props;
+    console.log(component_list);
     return (
       <React.Fragment>
         <div
@@ -15,6 +18,13 @@ class Container extends Component {
           <div>
             <Icon loading name="react" size="large" />
           </div>
+           {component_list.map((list, i)=>
+            <div key={i} className="button">
+              <Link to={list.path} style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                {list.name}
+              </Link>
+            </div>
+          )}
         </div>
 
         <header
@@ -81,9 +91,7 @@ class Container extends Component {
         <main>
           <div className="wrapper">
             <article>
-              {component}
-
-      
+              {children}
             </article>
           </div>
         </main>

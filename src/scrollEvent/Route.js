@@ -7,8 +7,7 @@ function Route() {
   return (
     <React.Fragment>
       {/* <img src="https://source.unsplash.com/random" width="245" /> */}
-      <Layout
-        component={[...new Array(30)].map(() => (
+     {[...new Array(30)].map(() => (
           <p>
             스크롤 이벤트!!!
             React makes it painless to create interactive UIs. Design simple
@@ -16,7 +15,7 @@ function Route() {
             update and render just the right components when your data changes.
           </p>
         ))}
-      />
+      
     </React.Fragment>
   );
 }
