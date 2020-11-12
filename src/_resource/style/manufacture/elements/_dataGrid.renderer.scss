@@ -1,0 +1,239 @@
+/*
+dataGrid custom renderer/editor style
+ */
+.ag-root-wrapper {
+
+  // 커스텀렌더러 flex유틸정의
+  .grid-input-flex {
+    display: flex;
+    flex-direction: row;
+    & > {
+      flex: 1 1 auto;
+    }
+    & > div[class*='checkbox'],
+    & > div[class*='label'],
+    & > div[class*='pxw-'],
+    & > div[style*='width'] {
+      flex:none;
+    }
+
+    .ui.input {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  // [커스텀렌더러] Input Renderer
+  .grid-input-render {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    //min-width: 55px;
+    min-width:0 !important;
+    height: 20px;
+    margin: 0 auto;
+    padding: 0 8px;
+    background-color: #fff;
+    border: 1px solid #afb1b7;
+    vertical-align: top;
+    text-align: inherit;
+    line-height: 18px;
+    color: #333;
+    outline: 0;
+    border-radius: 0;
+    cursor: text;
+
+    &.has-icon {
+      padding-right:20px;
+    }
+
+    &.readOnly {
+      color: #888;
+      background-color: #e4e4e4;
+      cursor: default;
+    }
+
+    &.required {
+      background-color: #cdf0ff;
+    }
+
+    &.error {
+      color: #f00f0f;
+      border-color: #f00f0f;
+    }
+
+    &.datepicker {
+      min-width: 120px;
+
+      &.datetime {
+        min-width: 164px;
+      }
+
+      &.input-period {
+        min-width: 184px;
+      }
+
+      &.input-period-type {
+        min-width: 304px;
+      }
+    }
+
+    &__field {
+      overflow:hidden;
+      height: 100%;
+      white-space: nowrap;
+    }
+
+    .icon {
+      position: absolute;
+      top:-1px;
+      right:-1px;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      line-height: 20px;
+      color: #333;
+      background-color:transparent;
+    }
+  }
+
+  // [커스텀렌더러] Col Divide
+  .grid-divide-cell {
+    overflow: hidden;
+    margin: -2px -8px;
+    height: 24px;
+    line-height: 24px;
+    display: flex;
+
+    &__item {
+      border-left: 1px solid #888;
+      padding: 0 4px;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  // [커스텀렌더러] inputWithValue
+  .grid-inputWithValue {
+    //margin:-2px -8px;
+    //padding:0 8px;
+
+    &__display {
+      margin:0 -8px 2px;
+      line-height:22px;
+      height:23px;
+      border-bottom:1px solid #888;
+    }
+    .ui.input {
+      width:100%;
+    }
+  }
+
+  // [커스텀렌더러] Header Input
+  .grid-header-input {
+    .ag-header-cell-label {
+      flex-direction: column;
+    }
+    .input {
+      width:100%;
+      margin:0;
+    }
+  }
+  // [커스텀렌더러] Header colSpan
+  .grid-header-colSpan {
+    position:relative;
+    z-index:4;
+  }
+
+  // [커스텀렌더러] Memo
+  .memo {
+    .content {
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // [커스텀렌더러] Radio
+  .ag-selection-radio {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    min-width: 12px;
+    min-height: 12px;
+    padding-left: 12px;
+    vertical-align: top;
+    white-space: nowrap;
+    text-indent: 4px;
+    cursor: pointer;
+    user-select: none;
+    margin: 4px;
+    line-height: 12px;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border: 1px solid #afb1b7;
+      border-radius: 50%;
+    }
+
+    &.checked{
+      &::before{
+        display: block
+      }
+    }
+    &::before{
+      display: none;
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 1;
+      width: 6px;
+      height: 6px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+
+// [그리드 싱크액션]
+.sync-grid {
+  display:flex;
+  width:100%;
+  padding:8px 0;
+  &__item {
+    flex: 1 1 auto;
+    &[class*="pxw-"],
+    &[class*="pw-"] {
+      flex:none;
+    }
+    .ag-theme-balham {
+      margin:0;
+    }
+    &:not(:last-child) {
+      .ag-root {
+        border-right:1px solid #333;
+        > div {
+          margin-right:-18px;
+        }
+      }
+    }
+    &:not(:first-child) {
+      .ag-root-wrapper-body {
+        margin-left:-1px;
+      }
+    }
+  }
+}

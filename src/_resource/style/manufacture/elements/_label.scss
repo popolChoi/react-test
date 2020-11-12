@@ -1,0 +1,49 @@
+.label-btn {
+  width:20px;
+  min-height:20px;
+  padding:0 !important;
+  // @at-root .table & {
+  //   background-color:#e5e5e5;
+  //   border:none;
+  //   margin:2px;
+  // }
+  &.wide {
+    padding:0 5px;
+    width:auto;
+  }
+  &.is-active {
+    color:#ffffff !important;
+    background-color:#1789b9;
+  }
+  &.is-disabled {
+    color:#ffffff;
+    background-color:#b4b4b4;
+  }
+}
+
+.badge-group {
+  .legend-mark {
+    margin:0 5px 2px 7px;
+  }
+  .legend-mark-line {
+    margin:0 5px 2px 30px;
+  }
+}
+
+.tag-box {
+  .tag {
+    color:#fff;
+    min-width:60px;
+    text-align:center;
+    display:inline-block;
+    @each $color in (
+      blue:#59abe3,
+      green:#66cc99
+    ) {
+      &--#{nth($color, 1)} {
+        border-color:nth($color, 2);
+        background-color:nth($color, 2);
+      }
+    }
+  }
+}

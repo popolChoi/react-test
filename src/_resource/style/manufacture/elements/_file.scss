@@ -1,0 +1,66 @@
+
+.file-image {
+  position:relative;
+}
+
+button.file-upload-btn {
+  text-indent:-9999em;
+  width:24px;
+  height:24px;
+  border:3px solid #ccc;
+  border-radius:5px;
+  position:absolute;
+  z-index:1;
+  left:50%;
+  top:50%;
+  background:transparent;
+  cursor:pointer;
+  transform:translate(-50%, -50%);
+  &:before,
+  &:after {
+    content:"";
+    background:#ccc;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+  &:before {
+    width:13px;
+    height:3px;
+  }
+  &:after {
+    height:13px;
+    width:3px;
+  }
+}
+
+button.file-delete-btn {
+  @extend .file-upload-btn;
+  &:before,
+  &:after {
+    transform:translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+.image-table {
+  white-space:nowrap;
+  &__item {
+    width:154px;
+    display:inline-block;
+    &:nth-child(n+2) {
+      margin-left:16px;
+    }
+    > p {
+      margin-top:3px;
+    }
+  }
+}
+
+.image-view {
+  border:1px solid #afb1b7;
+  background-color:#fff;
+  height:315px;
+  display:flex;
+  align-items:center;
+}

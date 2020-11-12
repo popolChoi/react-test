@@ -1,0 +1,309 @@
+
+@import "common";
+@import "part_1";
+@import "part_2";
+
+
+/**
+ * ## 일반 Table
+ */
+$table-border-color: #333333;
+$cell-border-color: #888888;
+// $th-bg-color: $grey-lighten-4;
+
+.table-row {
+  position: relative;
+  margin: 4px 0;
+
+  // & + .table-row:not(.flex-item) {
+  //   margin-top: 6px; // 왜 필요하지 몰라 주석처리
+  // }
+
+  &.fixed {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  & + .view-detail {
+    margin: 4px -4px;
+    padding: 0 4px;
+    border-top: 1px solid #dcdcdc;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .border-right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $table-border-color;
+  }
+
+  .border-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $table-border-color;
+  }
+}
+
+.fixed .table {
+  table-layout: fixed;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th {
+    // background-color: $grey-lighten-4;
+  }
+
+  thead {
+    tr:not(:first-child) th {
+    //   background-color: $grey-lighten-5;
+    }
+  }
+
+  thead + tbody {
+    thead th {
+    //   background-color: $grey-lighten-4;
+    }
+
+    th {
+    //   background-color: $grey-lighten-5;
+    }
+  }
+
+  th,
+  td {
+    height: 25px;
+    padding: 2px 1px;
+    vertical-align: middle;
+    border: 1px solid $cell-border-color;
+
+    &.left {
+      text-align: left !important;
+    }
+
+    &.right {
+      text-align: right !important;
+    }
+
+    &.center {
+      text-align: center !important;
+    }
+
+    @at-root {
+      .flex .table-row + .table-row .table {
+        th,
+        td {
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+  }
+
+  // 열제목:center / 행제목:left
+  thead th {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  tbody th {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  td {
+    word-break: break-all;
+  }
+
+  tr.left th,
+  tr.left td {
+    text-align: left;
+  }
+
+  tr.right th,
+  tr.right td {
+    text-align: right;
+  }
+
+  tr.center th,
+  tr.center td {
+    text-align: center;
+  }
+
+  // .bgc1 {
+  //   background: #dae5e5 !important;
+
+  //   th,
+  //   td {
+  //     background: #dae5e5 !important;
+  //   }
+  // }
+
+  .bgc2 {
+    background-color: #f7f6e5 !important;
+  }
+
+  .bgc3 {
+    background-color: #f8efe6 !important;
+  }
+
+  .bgc4 {
+    background-color: #ecede7 !important;
+  }
+
+  // .dep2 {
+  //   background-color: rgba(205, 240, 255, 0.25);
+  // }
+
+  // .dep3 {
+  //   background-color: rgba(205, 240, 255, 0.5);
+  // }
+
+  // .dep4 {
+  //   background-color: rgba(205, 240, 255, 0.75);
+  // }
+
+  // .dep5 {
+  //   background-color: rgba(205, 240, 255, 1);
+  // }
+
+  .col {
+    @for $i from 1 through 10 {
+      &-#{$i} {
+        > div {
+          width: calc(100% / #{$i} - 2px * (#{$i} - 1) / #{$i});
+        }
+      }
+    }
+  }
+
+  //width col
+  &[class*="col"] {
+    th {
+      width: 10%;
+    }
+  }
+
+  &.col {
+    @for $i from 1 through 10 {
+      @if $i % 2==0 {
+        &-#{$i} {
+          td {
+            // @debug (100% - (10% * $i / 2)) / ($i / 2);
+            width: (100% - (10% * $i / 2)) / ($i / 2);
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    vertical-align: top;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+
+    &.grey:not(.basic),
+    &.black:not(.basic),
+    &.blue:not(.basic) {
+      border: 0;
+    }
+  }
+
+  .input,
+  .selection,
+  textarea,
+  .label,
+  .cal-datepicker,
+  .cal-datepicker-range-time,
+  .cal-datepicker-range {
+    vertical-align: top;
+  }
+
+  &:not(.no-hover) tr:hover {
+    th,
+    td {
+      background-color: #e7e8ee;
+    }
+  }
+
+  .cell-hover {
+    background-color: #e7e8ee !important;
+  }
+}
+
+// .ag-theme-balham + .divider:not(.vertical):not(.horizontal),
+// .table-row + .divider:not(.vertical):not(.horizontal) {
+//   margin: 4px 0;
+//   border-top: 1px solid $grey-lighten-2 !important;
+// }
+
+.collapsible-controller {
+  display: flex;
+  width: 100%;
+  margin: 4px 0;
+//   background-color: $grey-lighten-4;
+
+  > div {
+    flex: 1;
+    height: 32px;
+
+    &[style*="width"] {
+      flex: 0 1 auto;
+    }
+
+    // &:not(:first-child) {
+    //   border-left: 1px solid $grey-base;
+    // }
+
+    .label {
+      float: left;
+      margin: 10px 0 10px 8px;
+      line-height: 1;
+    }
+
+    .right {
+      float: right;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      margin: 0 8px;
+    }
+  }
+}
+
+.collapsible-cell {
+  > span {
+    display: inline-block;
+    width: 10px;
+    padding-right: 4px;
+    text-align: center;
+  }
+
+  &.indent {
+    &-1 {
+      padding-left: 20px;
+    }
+
+    &-2 {
+      padding-left: 24px;
+    }
+  }
+}

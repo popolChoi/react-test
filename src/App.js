@@ -8,6 +8,7 @@ import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import "semantic-ui-css/semantic.min.css";
 import "./layout/css/style.scss";
+// import "./_resource/style/manufacture/part.scss";
 
 
 const App = () => {

@@ -1,0 +1,90 @@
+@import "dataGrid.renderer";
+
+.ag-root-wrapper {
+
+  .ag-dnd-ghost {
+    .ag-dnd-ghost-icon {
+      margin-right: 0;
+    }
+    div {
+      display: none;
+    }
+  }
+
+  .ag-react-container i.icon {
+    margin: 0;
+  }
+
+  .ag-custom-select-list {
+    min-width:60px;
+  }
+
+  .grid-bg-blue {
+    background-color: #e5eff9;
+  }
+
+  .grid-bg-grey {
+    background-color: #e5eff9;
+  }
+
+  .grid-bg-pink {
+    background-color: #f8dff8 !important;
+  }
+
+  .grid-bg-blue {
+    background-color: #dbe4f8 !important;
+  }
+
+  .grid-bg-sum {
+    background-color:#f7f6e5;
+  }
+
+}
+
+
+// manufacture chain style
+.ag-theme-balham .ag-selection-checkbox {
+
+  &.ag-selection-checkbox--star {
+    .ag-icon {
+      width: 12px;
+      height: 12px;
+      // background-image: url('~@resource/img/manufacture/ag-selection-checkbox--star.png');
+      -webkit-background-size: 12px auto;
+      background-size: 12px auto;
+      cursor:pointer
+    }
+    .ag-icon-checkbox-unchecked {
+      background-position: 0 0;
+    }
+    .ag-icon-checkbox-checked {
+      background-position: 0 -12px;
+    }
+  }
+}
+
+// cell 여백 최소화
+.no-margin .ag-theme-balham {
+  margin:0;
+  line-height:1.4 !important;
+  .ag-cell {
+    padding:1px 1px !important;
+  }
+  input[type=password], input[type=text],
+  .ag-root-wrapper .grid-input-render {
+    height:16px !important;
+    line-height:16px !important;
+  }
+}
+
+.no-margin .ui.table {
+  line-height:1.4;
+  td, th {
+    padding:1px 1px !important;
+    height:19px !important;
+  }
+  input[type=password], input[type=text] {
+    height:16px !important;
+  }
+}
+

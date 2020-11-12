@@ -1,0 +1,22 @@
+@each $color in (
+  blue:#58aae1,
+  lightblue:#9cceeb,
+  skyblue: #2592e6,
+  darkblue:#526d8f,
+  sky:#b2c4d8,
+  yellow:#f5c065,
+  darkyellow:#fb8c00 ,
+  pink:#da8787,
+  grey:#999999,
+  red: #dc4439,
+  lightred:#e53935 ,
+  green: #4caf50,
+  black: #333333,
+) {
+  .mark-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+    &:before {
+      background-color: nth($color, 2);
+    }
+  }
+}

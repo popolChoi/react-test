@@ -1,0 +1,57 @@
+.chart {
+
+  &--horizontal {
+
+    .recharts-cartesian-grid-vertical {
+      display: none;
+    }
+    .recharts-cartesian-grid-horizontal {
+      line {
+        stroke-dasharray: 0;
+      }
+    }
+
+    .recharts-cartesian-axis-tick-line {
+      display: none;
+    }
+
+    .recharts-cartesian-axis-line {
+      display: none;
+    }
+
+  }
+
+  &--vertical {
+    .recharts-cartesian-grid-vertical {
+      line {
+        stroke-dasharray: 0;
+      }
+    }
+    .recharts-cartesian-grid-horizontal {
+      display: none;
+    }
+  }
+
+}
+
+
+.one-chart{
+  display: flex;
+  padding-top: 4px;
+  &:after {
+    clear:both;
+    content:'';
+  }
+
+  p {
+    text-align: right;
+    padding-right: 5px;
+    span {
+      padding-left: 5px;
+      float: left;
+    }
+  }
+  &:first-child {
+    padding-top: 0;
+  }
+}

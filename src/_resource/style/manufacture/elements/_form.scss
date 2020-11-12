@@ -1,0 +1,33 @@
+.checkbox-btn-type {
+  margin: 0;
+  // white-space: normal;
+  // word-wrap: break-word;
+
+  .checkbox {
+    min-width: 120px;
+    min-height: 20px;
+    padding: 0 11px;
+    line-height: inherit;
+    background-color: #e0e0e0;
+
+    &:first-child {
+      margin-left: 4px;
+    }
+
+    &.checked {
+      color: #ffffff;
+      background-color: #1789b9;
+    }
+
+    label::after,
+    label::before {
+      display: none;
+    }
+
+    label {
+      width: 100%;
+      padding: 0;
+      text-indent: 0;
+    }
+  }
+}
